@@ -458,42 +458,14 @@
     </footer>
 
     <script>
-        const SUPABASE_URL = 'https://tzgiijgfldbqtwfweqwl.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6Z2lpamdmbGRicXR3ZndlcXdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgzODAxNDQsImV4cCI6MjA3Mzk1NjE0NH0.JwYZYkyseDy05FmYjyiG1xAptlHlXNYwXYyEMHeM4iM';
-        
-        document.getElementById('corporate-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-            
-            data.created_at = new Date().toISOString();
-            data.status = 'new';
-            data.source = 'website_form';
-            
-            try {
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/companies`, {
-                    method: 'POST',
-                    headers: {
-                        'apikey': SUPABASE_ANON_KEY,
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to submit form');
-                }
-                
-                e.target.style.display = 'none';
-                document.getElementById('success-message').style.display = 'block';
-                
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('error-message').style.display = 'block';
-            }
-        });
+        <script>
+    const SUPABASE_URL = 'https://tzgiijgfldbqtwfweqwl.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
+    
+    document.getElementById('corporate-form').addEventListener('submit', async function(e) {
+        // ... existing code here ...
+    });
+</script>
     </script>
 </body>
 </html>
